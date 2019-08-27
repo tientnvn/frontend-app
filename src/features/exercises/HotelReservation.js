@@ -13,14 +13,19 @@ export class HotelReservation extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      arrivals: "",
-      departure: "",
-      k: ""
+      arrivals: "1, 3, 5",
+      departure: "2, 6, 10",
+      k: "1"
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleDepartureChange = this.handleDepartureChange.bind(this);
     this.handleKChange = this.handleKChange.bind(this);
     this.handleCheckReservation = this.handleCheckReservation.bind(this);
+    this.props.actions.checkReservation({
+        "arrivals": [1, 3, 5],
+        "departure": [2, 6, 10],
+        "k": 1
+    })
   }
 
   handleChange(event) {
